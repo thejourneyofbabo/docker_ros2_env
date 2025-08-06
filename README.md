@@ -1,8 +1,29 @@
-# This is ROS2 environment with Docker
+# ROS2 Docker Environment
 
-## How to use?
-1. Open one terminal to `docker compose up`
-2. At other terminal, `docker exec -it ros2_docker_ws-sim-1 /usr/bin/zsh`
-3. Enter `http://localhost:8080/vnc.html` for rviz, visualization
+Ubuntu + ROS2 Humble development environment with GUI support.
+
+## Usage
+
+```bash
+# Navigate to docker_ws directory
+cd docker_ws
+
+# Start containers
+docker compose up
+
+# Access container
+docker exec -it ros2_docker zsh
+
+# GUI access (RViz, etc.)
+http://localhost:8080/vnc.html
+```
+
+## Features
+
+- Ubuntu with ROS2 Humble
+- Development tools (vim, git, cmake, python)
+- Oh My Zsh shell  
+- GUI via noVNC
+- Volume mounted to Programming/ directory
 
 

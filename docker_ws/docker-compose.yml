@@ -2,13 +2,13 @@
 
 # Copyright (c) 2025 Jisang Yun
 
-version: '3'
 services:
   sim:
+    container_name: ros2_docker
     image: ros2_docker_env
     build: ./
     volumes: 
-      - ./:/ros2_docker_ws
+      - ../:/workspace
     environment:
       - DISPLAY=novnc:0.0
     networks:
