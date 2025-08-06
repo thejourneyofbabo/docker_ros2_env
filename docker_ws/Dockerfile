@@ -29,8 +29,9 @@ RUN apt-get update && apt-get install -y \
 RUN which zsh || { ln -s $(which zsh) /bin/zsh; }
 RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
 
-# Setup ROS environment
-RUN echo "source /opt/ros/humble/setup.zsh" >> /root/.zshrc
+# Setup ROS environment and autocomplete
+RUN echo "source /opt/ros/humble/setup.zsh" >> /root/.zshrc && \
+    echo "source /opt/ros/humble/share/ros2cli/environment/ros2-argcomplete.zsh" >> /root/.zshrc
 
 # Install Python dependencies
 RUN pip3 install \
