@@ -1,29 +1,46 @@
 # ROS2 Docker Environment
 
-Ubuntu + ROS2 Humble development environment with GUI support.
+Ready-to-use ROS2 Humble development environment with GUI support.
 
-## Usage
+## Getting Started
 
+1. **Start the environment**
+   ```bash
+   cd docker_ws
+   docker compose up -d
+   ```
+
+2. **Access the container**
+   ```bash
+   docker exec -it ros2_docker zsh
+   ```
+
+3. **Open GUI applications**
+   - Go to `http://localhost:8080/vnc.html` in your browser
+   - Click "Connect"
+
+## What's Included
+
+- ROS2 Humble (Ubuntu base)
+- RViz2, development tools (git, cmake, vim)
+- Oh My Zsh shell
+- GUI access via noVNC
+- Your files mounted at `/workspace`
+
+## Workspace Structure
+
+- `docker_ws/` - Docker files
+- `programming_ws/` - Your ROS2 projects go here
+
+## Quick Test
+
+Inside the container:
 ```bash
-# Navigate to docker_ws directory
-cd docker_ws
+# Test ROS2
+ros2 run demo_nodes_cpp talker
 
-# Start containers
-docker compose up
-
-# Access container
-docker exec -it ros2_docker zsh
-
-# GUI access (RViz, etc.)
-http://localhost:8080/vnc.html
+# In another terminal
+ros2 run demo_nodes_py listener
 ```
-
-## Features
-
-- Ubuntu with ROS2 Humble
-- Development tools (vim, git, cmake, python)
-- Oh My Zsh shell  
-- GUI via noVNC
-- Volume mounted to Programming/ directory
 
 
