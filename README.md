@@ -10,6 +10,32 @@ Ready-to-use ROS2 Humble development environment with GUI support.
    docker compose up -d
    ```
 
+## Stopping the Environment
+
+### Stop containers (keeps environment)
+If you started with `docker compose up` (without `-d`), you can stop with `Ctrl+C`.
+
+To stop containers but keep them for later:
+```bash
+docker compose stop
+```
+
+To restart stopped containers:
+```bash
+docker compose start
+```
+
+### Stop and remove containers
+To completely stop and remove containers (environment will be lost):
+```bash
+docker compose down
+```
+
+To also remove volumes:
+```bash
+docker compose down -v
+```
+
 2. **Access the container**
    ```bash
    docker exec -it ros2_docker zsh
