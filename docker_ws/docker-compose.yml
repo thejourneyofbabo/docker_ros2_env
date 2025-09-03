@@ -11,8 +11,11 @@ services:
       - ../:/workspace
     environment:
       - DISPLAY=novnc:0.0
+    ports:
+      - "4567:4567"
     networks:
       - x11
+    ipc: host
     stdin_open: true
     tty: true 
   novnc:  
